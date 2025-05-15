@@ -17,7 +17,7 @@ import { HttpLoaderFactory } from './core/utils/httpLoadeFiles';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-     provideRouter(routes ,withInMemoryScrolling({scrollPositionRestoration:'top'}),withViewTransitions(),withHashLocation()), 
+     provideRouter(routes ,withHashLocation(),withInMemoryScrolling({scrollPositionRestoration:'top'}),withViewTransitions()), 
      provideClientHydration(withEventReplay()),
      provideHttpClient(withFetch(),withInterceptors([headersInterceptor,errorsInterceptor,loadingInterceptor])),
      importProvidersFrom([BrowserAnimationsModule]),
